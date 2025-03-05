@@ -1,0 +1,166 @@
+/* 全局样式 */
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 让聊天窗口在不同屏幕下自动调整 */
+.chat-container {
+  width: 95%;
+  height: 85vh;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* 侧边栏（仅在中等及以上屏幕显示） */
+.sidebar {
+  width: 25%;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-history {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-history-item {
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-history-item:hover {
+  background: #e0e0e0;
+}
+
+/* 聊天主界面 */
+.chat-main {
+  width: 75vw; /* 让聊天区域占 75% 屏幕宽度 */
+  max-width: none; /* 取消 max-width 限制 */
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 聊天窗口 */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  border: 1px solid #ddd; 
+  background: #fdfdfd;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* 聊天气泡 */
+.chat-bubble {
+  max-width: 60%;
+  min-width: 0px; /* 避免太短的消息变成一个点 */
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-align: left;
+  padding: 12px 16px;
+  margin: 5px 10px; /* 调整左右边距，避免贴边 */
+  border-radius: 15px;
+  display: block; /* 让气泡完整展示 */
+}
+
+
+
+
+.chat-child {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+  text-align: left;
+}
+
+.chat-llm {
+  background: #e0e0e0;
+  color: black;
+  align-self: flex-start;
+  text-align: left;
+}
+
+/* 输入框 */
+.chat-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  align-items: center;
+}
+
+.chat-input textarea {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+}
+
+/* 发送按钮 */
+.chat-input button {
+  width: 103%;
+  padding: 10px;
+  background: #ff8c00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  
+}
+
+.chat-input button:hover {
+  background: #e07b00;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .chat-container {
+    width: 95%;
+    max-width: 1400px;
+    height: 85vh;
+    display: flex;
+    gap: 20px;
+  }
+  
+
+  .sidebar {
+    display: none;
+  }
+
+  .chat-main {
+    width: 100%;
+  }
+
+  .chat-window {
+    height: 60vh;
+  }
+}
